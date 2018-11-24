@@ -15,13 +15,4 @@ $(document).ready(function(){
         nextArrow: '.recent-post-slider__next',
         prevArrow: '.recent-post-slider__prev',
 	});
-    //menu
-    $('.hamburger').on('click', function() {
-       $('.nav-side').slideToggle('fast', function(){
-            if( $(this).css('display') === "none"){
-                $(this).removeAttr('style');
-            }
-            $('.hamburger').toggleClass('is-active');
-       });
-    });
 });
