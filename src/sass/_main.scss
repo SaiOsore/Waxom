@@ -4,6 +4,7 @@ body {
 	@include m-200; 
 	font-size: 14px;
 	color: $light;
+    overflow-x: hidden;
 }
 
 a, a:hover {
@@ -55,6 +56,10 @@ h6 {
 	}
 }
 
+.fixed {
+	position: fixed;
+}
+
 .main {
 	width: 100%;
 	height: 1024px;
@@ -94,6 +99,9 @@ h6 {
 		display: block;
 		margin-right: 80px;
 		z-index: 22;
+	}
+	@include r(556) {
+		margin-right: 0;
 	}
 	&__circle {
 		content: "";
@@ -213,10 +221,16 @@ h6 {
 		&:hover svg path {
 			fill: #d0bfab;
 		}
+		@include r(768) {
+			left: 0;
+		}
 	}
 	&__next {
 		left: auto;
 		right: 100px;
+		@include r(768) {
+			right: 0;
+		}
 	}
 	&__slides {
 		width: 100%;
@@ -288,6 +302,9 @@ h6 {
 		text-align: center;
 		color: $main;
 	    margin: 81px 0 112px 0;
+	    @include r(768) {
+	    	flex-direction: column;
+	    }
 	}
 	&__block {
 		position: relative;
@@ -308,6 +325,9 @@ h6 {
 			color: #c7b299;
 			fill: #c7b299;
 		}
+		@include r(768) {
+	    	margin-bottom: 100px;
+	    }
 	}
 	&__img {
 		margin-bottom: 30px;
@@ -337,6 +357,9 @@ h6 {
 		max-width: 800px;
 		margin: 0 auto;
 		margin-bottom: 30px;
+	}
+	&__over {
+		overflow: hidden;
 	}
 }
 
@@ -384,8 +407,8 @@ h6 {
 	}
 	&__categories {
 		display: flex;
-		justify-content: center;
 		margin-bottom: 40px;
+		overflow: auto;
 	}
 	&__list {
 		padding: 0 10px 0 10px;
@@ -396,6 +419,7 @@ h6 {
 		border-radius: 5px;
 		color: $dark;
 		padding: 10px 20px;
+		white-space: nowrap;
 		&:hover {
 			background-color: $accent;
 		}
@@ -593,6 +617,10 @@ h6 {
 	&__wrapper {
 		display: flex;
     	justify-content: space-around;
+    	@include r(768) {
+    		// flex-direction: column;
+    		flex-wrap: wrap;
+    	}
 	}
 	&__block {
 		position: relative;
@@ -608,6 +636,9 @@ h6 {
 			height: 3px;
 			width: 32px;
 			background-color: #f1eee9;
+		}
+		@include r(768) {
+			margin-bottom: 100px;
 		}
 	}
 	&__count {
